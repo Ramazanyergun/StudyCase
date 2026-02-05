@@ -2,24 +2,15 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    public InteractionData interactionData;
-
-    [HideInInspector] public float holdTimer;
-
-    public void Press(GameObject interactor)
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        interactionData.OnPress(interactor);
+        
     }
 
-    public void Hold(GameObject interactor)
+    // Update is called once per frame
+    void Update()
     {
-        holdTimer += Time.deltaTime;
-        interactionData.OnHold(interactor, holdTimer);
-    }
-
-    public void Release(GameObject interactor)
-    {
-        holdTimer = 0f;
-        interactionData.OnRelease(interactor);
+        
     }
 }

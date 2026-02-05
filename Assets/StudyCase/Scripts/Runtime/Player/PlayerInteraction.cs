@@ -2,45 +2,27 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public float interactionDistance = 2f;
-    public LayerMask interactionLayer;
 
-    private Interactable current;
+    [SerializeField] private float m_interactionDistance;
+    [SerializeField] private LayerMask m_interactionLayer;
+    [SerializeField] private Vector3 m_offset;
+    private Interactable m_currentIInteractable;
 
     void Update()
     {
         DetectInteractable();
-
-        if (current == null) return;
-
-        switch (current.interactionData.interactionType)
-        {
-            case InteractionType.Press:
-                if (InputManager.Instance.isInteracting)
-                    current.Press(gameObject);
-                break;
-
-            case InteractionType.Hold:
-                if (InputManager.Instance.isInteracting)
-                    current.Hold(gameObject);
-
-                if (!InputManager.Instance.isInteracting)
-                    current.Release(gameObject);
-                break;
-
-            case InteractionType.Toggle:
-                if (InputManager.Instance.isInteracting)
-                    current.Press(gameObject);
-                break;
-        }
     }
-
     void DetectInteractable()
     {
-        Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-        if (Physics.Raycast(ray, out RaycastHit hit, interactionDistance, interactionLayer))
-            current = hit.collider.GetComponent<Interactable>();
+        Ray ray = new Ray(Camera.main.transform.position + m_offset, Camera.main.transform.forward);
+        Debug.DrawRay(transform.position + m_offset, transform.forward, Color.black);
+        if (Physics.Raycast(ray, out RaycastHit hit, m_interactionDistance, m_interactionLayer))
+        {
+
+            m_currentIInteractable = hit.collider.GetComponent<Interactable>();
+            Debug.Log(m_currentIInteractable.gameObject.name);
+        }
         else
-            current = null;
+            m_currentIInteractable = null;
     }
 }
