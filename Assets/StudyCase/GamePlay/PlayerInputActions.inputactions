@@ -120,6 +120,34 @@
                     "isPartOfComposite": false
                 }
             ]
+        },
+        {
+            "name": "Camera",
+            "id": "9e005956-7c6d-4637-841f-7a3a30a0c83b",
+            "actions": [
+                {
+                    "name": "Follow",
+                    "type": "Value",
+                    "id": "8c1e7ff6-b2c8-41bb-afd2-6e7ad4618157",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "a68417e8-9ab2-4ddc-9bf0-621240c9999c",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Follow",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []

@@ -7,6 +7,7 @@ public class PlayerManager : MonoBehaviour
     private InputManager m_inputManager;
     private PlayerLocomotion m_playerLocomotion;
     private AnimationManager m_animationManager;
+    private CameraManager m_cameraManager;
 
     void Awake()
     {
@@ -15,6 +16,7 @@ public class PlayerManager : MonoBehaviour
             m_inputManager = GetComponent<InputManager>();
             m_playerLocomotion = GetComponent<PlayerLocomotion>();
             m_animationManager = GetComponent<AnimationManager>();
+            m_cameraManager = FindAnyObjectByType<CameraManager>();
         }
         catch (NullReferenceException e)
         {
@@ -33,6 +35,10 @@ public class PlayerManager : MonoBehaviour
         if (m_animationManager != null)
             m_animationManager.HandleAnimations();
 
+    }
+    void LateUpdate()
+    {
+        m_cameraManager.HandleAllCameraMovement();
     }
 
 }
