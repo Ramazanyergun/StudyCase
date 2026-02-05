@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     public float horizontalInput;
     public float verticalInput;
     public bool isSprinting;
+    public bool isInteracting;
 
     void Awake()
     {
@@ -28,6 +29,10 @@ public class InputManager : MonoBehaviour
 
             inputActions.Locomotion.Sprint.started += _ => isSprinting = true;
             inputActions.Locomotion.Sprint.canceled += _ => isSprinting = false;
+
+
+            inputActions.Interaction.Interact.started += _ => isInteracting = true;
+            inputActions.Interaction.Interact.canceled += _ => isInteracting = false;
 
         }
         inputActions.Enable();

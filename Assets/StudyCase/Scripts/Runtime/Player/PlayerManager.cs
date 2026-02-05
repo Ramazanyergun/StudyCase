@@ -1,9 +1,6 @@
 using System;
 using UnityEngine;
 
-[RequireComponent(typeof(InputManager))]
-[RequireComponent(typeof(PlayerLocomotion))]
-[RequireComponent(typeof(AnimationManager))]
 public class PlayerManager : MonoBehaviour
 {
 
@@ -13,13 +10,16 @@ public class PlayerManager : MonoBehaviour
 
     void Awake()
     {
-
-
-
-        m_inputManager = GetComponent<InputManager>();
-        m_playerLocomotion = GetComponent<PlayerLocomotion>();
-        m_animationManager = GetComponent<AnimationManager>();
-
+        try
+        {
+            m_inputManager = GetComponent<InputManager>();
+            m_playerLocomotion = GetComponent<PlayerLocomotion>();
+            m_animationManager = GetComponent<AnimationManager>();
+        }
+        catch (NullReferenceException e)
+        {
+            Debug.Log(e);
+        }
     }
 
     void Update()
@@ -28,10 +28,10 @@ public class PlayerManager : MonoBehaviour
     }
     void FixedUpdate()
     {
-
-        m_playerLocomotion.HandleAllMovements();
-
-        m_animationManager.HandleAnimations();
+        if (m_playerLocomotion != null)
+            m_playerLocomotion.HandleAllMovements();
+        if (m_animationManager != null)
+            m_animationManager.HandleAnimations();
 
     }
 
