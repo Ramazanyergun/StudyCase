@@ -1,4 +1,4 @@
-# Interaction System - [Adınız Soyadınız]
+# Interaction System - Ramazan YERGÜN
 
 > Ludu Arts Unity Developer Intern Case
 
@@ -35,26 +35,14 @@ git clone https://github.com/Ramazanyergun/StudyCase.git
 | WASD | Hareket |
 | Mouse | Bakış yönü | 
 
+
 ### Test Senaryoları
 
-1. **Door Test:**
-   - Kapıya yaklaşın, "Press E to Open" mesajını görün
-   - E'ye basın, kapı açılsın
-   - Tekrar basın, kapı kapansın
+1. **Movement Test:**
+   - WASD tuşları ile hareket edin
+   - LeftShift tuşu ile sprint atın
+   - Mouse ile baskış açınızı değiştirin
 
-2. **Key + Locked Door Test:**
-   - Kilitli kapıya yaklaşın, "Locked - Key Required" mesajını görün
-   - Anahtarı bulun ve toplayın
-   - Kilitli kapıya geri dönün, şimdi açılabilir olmalı
-
-3. **Switch Test:**
-   - Switch'e yaklaşın ve aktive edin
-   - Bağlı nesnenin (kapı/ışık vb.) tetiklendiğini görün
-
-4. **Chest Test:**
-   - Sandığa yaklaşın
-   - E'ye basılı tutun, progress bar dolsun
-   - Sandık açılsın ve içindeki item alınsın
 
 ---
 
@@ -91,7 +79,7 @@ git clone https://github.com/Ramazanyergun/StudyCase.git
 
 | Kural | Uygulandı | Notlar |
 |-------|-----------|--------|
-| m_ prefix (private fields) | [x] / [ ] | |
+| m_ prefix (private fields) | [] / [x] | |
 | s_ prefix (private static) | [x] / [ ] | |
 | k_ prefix (private const) | [x] / [ ] | |
 | Region kullanımı | [x] / [ ] | |
@@ -104,22 +92,22 @@ git clone https://github.com/Ramazanyergun/StudyCase.git
 
 | Kural | Uygulandı | Örnekler |
 |-------|-----------|----------|
-| P_ prefix (Prefab) | [x] / [ ] | P_Door, P_Chest |
-| M_ prefix (Material) | [x] / [ ] | M_Door_Wood |
-| T_ prefix (Texture) | [x] / [ ] | |
+| P_ prefix (Prefab) | [] / [x] | P_Door, P_Chest |
+| M_ prefix (Material) | [] / [x] | M_Door_Wood |
+| T_ prefix (Texture) | [] / [x] | |
 | SO isimlendirme | [x] / [ ] | |
 
 ### Prefab Kuralları
 
 | Kural | Uygulandı | Notlar |
 |-------|-----------|--------|
-| Transform (0,0,0) | [x] / [ ] | |
-| Pivot bottom-center | [x] / [ ] | |
-| Collider tercihi | [x] / [ ] | Box > Capsule > Mesh |
+| Transform (0,0,0) | [] / [x] | |
+| Pivot bottom-center | [] / [x] | |
+| Collider tercihi | [] / [x] | Box > Capsule > Mesh |
 | Hierarchy yapısı | [x] / [ ] | |
 
 ### Zorlandığım Noktalar
-> [Standartları uygularken zorlandığınız yerler]
+> Interact system kısmında zorlandım çünkü pek aşina olduğum bir mekanik değildi ve standartlara uymaya çalışmak biraz zamanımı aldı.
 
 ---
 
@@ -167,8 +155,8 @@ git clone https://github.com/Ramazanyergun/StudyCase.git
 ## Bilinen Limitasyonlar
 
 ### Tamamlanamayan Özellikler
-1. [Özellik] - [Neden tamamlanamadı]
-2. [Özellik] - [Neden]
+1. [Interaction System] - [Karakter Hareketi ve animasyonuna aşırı vakit harcadım ve tabi bunun yanında Github ile boşa geçirdiğim birkaç saat var:)]
+
 
 ### Bilinen Bug'lar
 1. [Bug açıklaması] - [Reproduce adımları]
@@ -185,8 +173,8 @@ git clone https://github.com/Ramazanyergun/StudyCase.git
 Zorunlu gereksinimlerin dışında eklediklerim:
 
 1. **[Özellik Adı]**
-   - Açıklama: [Ne yapıyor]
-   - Neden ekledim: [Motivasyon]
+   - Açıklama: [Sprint Atma]
+   - Neden ekledim: [Eklediğim karakter bir ninjaydı bu sebeple eğilerek yürüme animasyonu kullandım sonra bunun tek başına güzel olmadığını düşünüp birde sprint animasyonu ekledim]
 
 2. **[Özellik Adı]**
    - ...
@@ -197,7 +185,7 @@ Zorunlu gereksinimlerin dışında eklediklerim:
 
 ```
 Assets/
-├── [ProjectName]/
+├── StudyCase/
 │   ├── Scripts/
 │   │   ├── Runtime/
 │   │   │   ├── Core/
@@ -214,6 +202,7 @@ Assets/
 │   ├── ScriptableObjects/
 │   ├── Prefabs/
 │   ├── Materials/
+|   ├── Characters
 │   └── Scenes/
 │       └── TestScene.unity
 ├── Docs/
@@ -231,10 +220,10 @@ Assets/
 
 | Bilgi | Değer |
 |-------|-------|
-| Ad Soyad | [Adınız] |
-| E-posta | [email@example.com] |
-| LinkedIn | [profil linki] |
-| GitHub | [github.com/username] |
+| Ad Soyad | Ramazan YERGÜN |
+| E-posta | yergunr@gmail.com |
+| LinkedIn | https://www.linkedin.com/in/ramazanyergun/ |
+| GitHub | https://github.com/Ramazanyergun/ |
 
 ---
 
